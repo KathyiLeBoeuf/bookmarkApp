@@ -1,0 +1,282 @@
+/* <!--  .block__element--modifier {}  --> */
+/*
+0 -       600px        =   Phone                 (max-width)
+600 -   900px        =   Tablet portrait      (max-width)
+900 -   1200px      =   Tablet landscape  (max-width)
+[1200 - 1800px]   is where our normal styles apply
+1800px +               =      Big Desk-top   (min-width)
+
+$breakpoint argument choices:
+-phone
+-tab-port
+-tab-land
+-big-desktop
+
+ORDER RECOMMENDED OF MEDIA QUERIES USAGE:
+    base + typography > general layout + grid > page layout >  components
+
+==== ems and rems ARE NOT affected by the root font size setting   DEFAULT comes from the browser, usually 16px ====
+1em = 16px
+/* @media (max-width: 56.25em) {
+			body {
+				padding: 0; } } */
+/*=====TITLE==========================*/
+/* positioning */
+/* display + box model */
+/* color */
+/* text */
+/* other */
+/* colors
+
+#aaa =
+#bbb
+#ccc
+#ddd
+#eee = header, nav
+#fff = page
+color: blue; = font
+*/
+
+* ,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* root font size declared below to allow use of rem's */
+html {
+	font-size: 62.5%;
+/*  @include respond(phone) {  //width < 600?       //1rem = 4.8px    font-size: 30%;}  */
+}
+
+body {
+
+		padding: 3rem;   /* gives a white border around the entire page */
+		color: #fff;
+		font-family: 'Open Sans', sans-serif;
+		font-weight: 400;
+		line-height: 1.7;
+}
+
+/*------------------------------------------------------------------------------------------------------
+COLUMN SET up
+------------------------------------------------------------------------------------------------------*/
+.row {
+  max-width: 1000px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 auto;
+}
+/* Clearfix */
+.row::before,
+.row::after {
+  display: table;
+  content: '';
+}
+
+.row::after {
+  clear: both;
+}
+
+.col-1, .col-2, .col-3, .col-4, .col-6, .col-12 {
+  float: left;
+  /* Gutters:
+   * Each column is padded by half-a-gutter on each side,
+   * Half a gutter is 10px, 10/960 (context) = 1.041666%
+   */
+  padding-left: 1.04166666%;
+  padding-right: 1.04166666%;
+}
+
+/*
+<form class="js-edit-item">
+<input class="shopping-item type="text" value="${item.name}" />
+</form>
+*/
+
+/*------------------------------------------------------------------------------------------------------*/
+/*  REUSABLE COMPONENTS */
+/*------------------------------------------------------------------------------------------------------*/
+
+
+
+
+/*----------  HEADINGS  ---------- */
+h1 {
+	text-align: center;
+	background-color: #fff;
+	color: blue;
+	font-size: 4rem;
+	/* positioning */
+	/* display + box model */
+	/* color */
+	/* text */
+	/* other */
+}
+
+
+/*----------  PARAGRAPHS  ---------- */
+
+p.notes {
+	color: black;
+	font-size: 2rem;
+	border: .3rem black dotted;
+}
+
+/*----------  ICONS  ---------- */
+
+
+
+/*----------  LINKS  ---------- */
+
+
+
+
+/*----------  BUTTONS  ---------- */
+button, input[type="text"] {
+  padding: 5px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+.nav__btn {
+/* positioning */
+padding: .5rem;
+/* display + box model */
+border-radius: 1rem;
+/* color */
+background-color: #fff;
+/* text */
+color: blue;
+font-size: 2rem;
+/* other */
+}
+/* .wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+	grid-auto-rows: minmax(100px, auto);
+	border: .5rem lightcoral dashed;
+} */
+/*------------------------------------------------------------------------------------------------------*/
+/*  HEADER */
+/*------------------------------------------------------------------------------------------------------*/
+
+.header {
+	/*border: .5rem purple solid; */
+	background-color: #fff;
+}
+
+
+
+
+/*----------  MAIN NAV  ---------- */
+
+.nav {
+	padding: 2rem;
+	background-color: #fff;
+	/*border: .5rem #555 solid; */
+}
+.nav__select {
+/* positioning */
+/* display + box model */
+margin-left: 1rem;
+/* color */
+background-color: #fff;
+color: black;
+/* text */
+font-size: 2rem;
+/* other */
+}
+
+/*----------  MOBILE NAV  ---------- */
+
+
+/*----------  STICKY NAV  ---------- */
+
+
+
+
+/*------------------------------------------------------------------------------------------------------*/
+/*  SECTION 1 */
+/*------------------------------------------------------------------------------------------------------*/
+.form__add,
+.form__edit  {
+	/*width: 50%; */
+	border: 1px #eee solid;
+
+}
+label {
+	font-size: 2rem;
+	color: blue;
+	justify-self: left;
+}
+input {
+	font-size: 2rem;
+	color: orange;
+}
+textarea {
+	color: pink;
+}
+.form__stars {
+	background-color: yellow;
+	color:black;
+}
+.star__label {
+	color: blueviolet;
+	/*margin-top: 2rem;*/
+}
+.form__submit {
+	padding: 1rem;
+	font-size: 2rem;
+	background-color: lightgreen;
+	color: blue;
+  float: right;
+	border-radius: 1rem;
+}
+.row__form--bottom {
+	align-items: center;
+}
+/*------------------------------------------------------------------------------------------------------*/
+/*  reg bookmark */
+/*------------------------------------------------------------------------------------------------------*/
+.js-book--empty {
+	width: 23.8%;
+	margin: 2rem;
+	border: 1rem orange dotted;
+	background-color: #aaa;
+	color: blue;
+	font-size: 4rem;
+}
+.js-book--li,
+.js-book__details--li {
+	padding: 1rem;
+	list-style-type: none;
+	font-size: 2rem;
+	color: black;
+	background-color: tan;
+	width: 12rem;
+	height: 8rem;
+	border-radius: .2rem;
+	text-align: center;
+}
+.fa {
+	color: gray;
+	float: right;
+}
+/*------------------------------------------------------------------------------------------------------*/
+/*  details
+/*------------------------------------------------------------------------------------------------------*/
+.js-book__details--li {
+
+	font-size: 2rem;
+	color: black;
+	background-color: tan;
+	width: 24rem;
+	height: 8rem;
+	border-radius: .2rem;
+	text-align: left;
+}
