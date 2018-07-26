@@ -30,35 +30,62 @@
 	</nav>
 	<main class="main">
 
-		<form class="form__add col-6">
-
-			<div class="row">
-				<label for="title" class="col-1">Title</label>
-				<input type="text" name="title" class="form__bookmark--title col-2" placeholder="TITLE">Title:</input>
-			</div>
-			<div class="row">
-				<label for="url" class="col-1">url</label>
-				<input type="text" name="url" class="form__bookmark--url col-2" placeholder="URL">url:</input>
-			</div>
-			<div class="row">
-				<label for="description" class="col-1">Description</label>
-				<textarea name="description" class="form__bookmark--desc col-2" rows="10" cols="33">Description</textarea>
-			</div>
-			<div class="row__form--bottom">
-				<label for="stars" class="star__label col-1">Add a rating</label>
-				<div name="stars" class="form__stars col-3">
-					<div name="stars" class="form__stars col-3">
-						<span>☆</span>
-						<span>☆</span>
-						<span>☆</span>
-						<span>☆</span>
-						<span>☆</span>
-					</div>
+		<form class="form__add">
+<ul>
+	<li>
+			<label for="title" class="form__add">Title</label>
+			<input type="text" name="title" class="form__add--title" placeholder="TITLE">Title:</input>
+		</li>
+	<li>
+			<label for="url" class="form__add">url</label>
+			<input type="text" name="url" class="form__add--url" placeholder="URL">url:</input>
+		</li>
+		<li>
+			<label for="description" class="form__add">Description</label>
+			<textarea name="description" class="form__add--desc" rows="10" cols="33">Description</textarea>
+		</li>
+		<li>
+			<label for="stars" class="star__label">Add a rating</label>
+			<div name="stars" class="form__add--stars">
+					<span>☆</span>
+					<span>☆</span>
+					<span>☆</span>
+					<span>☆</span>
+					<span>☆</span>
 				</div>
-				<button class="form__submit col-3">submit</button>
-			</div>
+			</li>
+			<li>
+			<button class="form__add--submit">submit</button>
+		</li>
+		</ul>
 		</form>
+		<!--try 2-->
 
+		<form class="form__add">
+				<ul>
+					<li>
+							<label for="title" class="form__add">Title</label>
+							<input type="text" name="title" class="form__add--title" placeholder="TITLE">Title:</input>
+
+							<label for="url" class="form__add">url</label>
+							<input type="text" name="url" class="form__add--url" placeholder="URL">url:</input>
+
+							<label for="description" class="form__add">Description</label>
+							<textarea name="description" class="form__add--desc" rows="10" cols="33">Description</textarea>
+
+							<label for="stars" class="star__label">Add a rating</label>
+							<div name="stars" class="form__add--stars">
+									<span>☆</span>
+									<span>☆</span>
+									<span>☆</span>
+									<span>☆</span>
+									<span>☆</span>
+								</div>
+
+							<button class="form__add--submit">submit</button>
+							</li>
+							</ul>
+						</form>
 	</main>
 
 

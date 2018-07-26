@@ -178,7 +178,7 @@ font-size: 2rem;
 .nav {
 	padding: 2rem;
 	background-color: #fff;
-	/*border: .5rem #555 solid; */
+	border-bottom: .5rem #555 solid;
 }
 .nav__select {
 /* positioning */
