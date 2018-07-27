@@ -31,38 +31,37 @@
 	<main class="main">
 
 
-		<!--BOOKMARK-->
-		<div class="js-book">
-			<ul class="js-book--ul">
-				<li class="js-book--li">Title
-					<i class="fa fa-remove" style="font-size:24px"></i>
+
+		<!--DETAILS-->
+		<div class="js-book__details">
+			<ul class="js-book__details--ul">
+					<li class="js-book__details--li">Title<span class="js-book__details--li">&#9747</span></li>
+				<li class="js-book__details--li">description</li>
+				<li class="js-book__details--li">
+					<a href="#">
+						<span>link</span>
+					</a>
 				</li>
-				<li class="js-book--li">Rating</li>
+				<li name="stars" class="form__stars js-book__details--li">
+					<span>☆</span>
+					<span>☆</span>
+					<span>☆</span>
+					<span>☆</span>
+					<span>☆</span>
+					<span>☆</span>
+				</li>
+				<li name="stars" class="form__stars js-book__details--li">
+					<span>&#9733</span>
+					<span>&#9733</span>
+					<span>&#9733</span>
+					<span>&#9734</span>
+					<span>&#9734</span>
+					<span>&#9734</span>
+
+				</li>
 				<li></li>
 			</ul>
 		</div>
-<!--DETAILS-->
-		<div class="js-book__details">
-				<ul class="js-book__details--ul">
-					<li class="js-book__details--li">Title
-						<i class="fa fa-remove js-book--li" style="font-size:24px"></i>
-					</li>
-					<li class="js-book__details--li">description</li>
-					<li class="js-book__details--li">
-						<a href="#">
-							<span>link</span>
-						</a>
-					</li>
-					<li name="stars" class="form__stars js-book__details--li">
-						<span>☆</span>
-						<span>☆</span>
-						<span>☆</span>
-						<span>☆</span>
-						<span>☆</span>
-					</li>
-					<li></li>
-				</ul>
-			</div>
 
 
 		<!--ADD-->
@@ -71,11 +70,11 @@
 
 			<div class="row">
 				<label for="title" class="col-1">Title</label>
-				<input type="text" name="title" class="form__bookmark--title col-2" placeholder="TITLE">Title:</input>
+				<input type="text" name="title" class="form__bookmark--title col-2" placeholder="TITLE">
 			</div>
 			<div class="row">
 				<label for="url" class="col-1">url</label>
-				<input type="text" name="url" class="form__bookmark--url col-2" placeholder="URL">url:</input>
+				<input type="text" name="url" class="form__bookmark--url col-2" placeholder="URL">
 			</div>
 			<div class="row">
 				<label for="description" class="col-1">Description</label>
