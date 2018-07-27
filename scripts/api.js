@@ -2,58 +2,56 @@
 'use strict';
 
 const api = (function () {
-  const BASE_URL = 'https://thinkful-list-api.herokuapp.com/kathy/bookmarks';
+  const BASE_URL = 'https://thinkful-list-api.herokuapp.com/kathy';
 
   const getItems = function (callback) {
-    $.getJSON(`${BASE_URL}/items`, callback);
+    $.getJSON(`${BASE_URL}/bookmarks`, callback);
     console.log(`I'm the GET request ${callback}`);
-
-    /*$.ajax({
-      url: `${BASE_URL}/items`,
-      method: 'GET',
-      dataType: 'json',
-      data: {part: 'snippet'},
-      success: function(data) {
-      console.log(data);
-      } */
   };
 
-  const createItems = function (items, callback) {
-    const newItems = JSON.stringify({
-      items,
-    });
+  const createItems = function (item, callback) {
+    console.log(item);
+    const newItems = JSON.stringify(item);
+    console.log(newItems);
     $.ajax({
-      url: `${BASE_URL}/items`,
+      url: `${BASE_URL}/bookmarks`,
       method: 'POST',
-      dataType: 'application/JSON',
+      contentType: 'application/json; charset=utf-8',
+      dataType: 'json',
       data: newItems,
       success: callback,
     });
   };
-  const updateItems = function (id, callback) {
+  const updateItems = function (id, updateData, callback) {
     $.ajax({
-      url: `${BASE_URL}/items/:id`,
+      url: `${BASE_URL}/bookmarks/:id`,
       method: 'PATCH',
-      dataType: 'application/JSON',
-      data: newItems,
-      success: callback,
-    });
-  };
-  const deleteItem = function (id,  callback) {
-    $.ajax({
-      url: `${BASE_URL}/items/${id}`,
-      method: 'DELETE',
-      contentType: 'application/json',
-      data: id,
+			contentType: 'application/json',
+			dataType: 'json',
+      data: JSON.stringify(updateData),
       success: callback
     });
   };
+  // const deleteItems = function (id,  callback) {
+  //   $.ajax({
+  //     url: `${BASE_URL}/bookmarks/${id}`,
+  //     method: 'DELETE',
+	// 		success: callback
+	// 	});
+
+	// 	const deleteItem = function(id, callback) {
+	// 		$.ajax({
+	// 			url: BASE_URL + '/bookmarks/' + id,
+	// 			method: 'DELETE',
+	// 			success: callback
+	// 		});
+  // };
 
   return {
     getItems,
     createItems,
     updateItems,
-    deleteItem
+    //deleteItem
   };
 }) ();
 
