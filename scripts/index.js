@@ -13,7 +13,9 @@ const index = (function () {
 
 
 
+$();
 
+/*
 $.getJSON('https://thinkful-list-api.herokuapp.com/kathy/bookmarks', (response) => {
   console.log('api response:', response);
 });
@@ -22,7 +24,4 @@ $.getJSON('https://thinkful-list-api.herokuapp.com/kathy/bookmarks', (response) 
     console.log(items);
   });
 });
-
-
-
-$();
+*/
