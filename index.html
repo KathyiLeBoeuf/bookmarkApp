@@ -13,14 +13,14 @@
 </head>
 
 <body>
-	<header class="header">
+	<header role="banner" class="header">
 		<h1>Bookmark Library</h1>
 
 	</header>
-	<nav class="nav">
+	<nav role="navigation" class="nav">
 		<button class="nav__btn js-nav__btn" name="submit" value="add">Add bookmark</button>
-		<select class="nav__select js-nav__select">
-			<option value="0">Sort by rating star</option>
+		<select aria-label="select rating" name="rating" id="rating" class="nav__select js-nav__select">
+			<option value="0">Sort by rating</option>
 			<option value="5">5 stars</option>
 			<option value="4">4 stars</option>
 			<option value="3">3 stars</option>
@@ -28,12 +28,21 @@
 			<option value="1">1 star</option>
 		</select>
 	</nav>
-	<main class="main">
-		<section id="addForm"></section>
-		<section id="bookmarks"></section>
+	<main role="main" class="main">
+		<section role="region" id="addForm">
+			<!--SET UP ROWS, PLACE  DIV ROW CODE HERE-->
+		</section>
+		<section role="region">
+			<!--SET UP ROWS, PLACE  DIV ROW CODE HERE-->
+		</section>
+		<section role="region">
+			<!--SET UP ROWS, PLACE  DIV ROW CODE HERE-->
+		</section>
 
 
 
+
+		<footer>Created by Kathy I. LeBoeuf &#169; 2018</footer>
 	</main>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/cuid/1.3.8/browser-cuid.min.js"></script>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>

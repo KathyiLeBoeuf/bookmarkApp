@@ -23,35 +23,29 @@ const api = (function () {
     });
   };
   const updateItems = function (id, updateData, callback) {
+    console.log(updateData);
+
     $.ajax({
-      url: `${BASE_URL}/bookmarks/:id`,
+      url: `${BASE_URL}/bookmarks/${id.id}`,
       method: 'PATCH',
-			contentType: 'application/json',
-			dataType: 'json',
+      contentType: 'application/json',
+      dataType: 'json',
       data: JSON.stringify(updateData),
       success: callback
     });
   };
-  // const deleteItems = function (id,  callback) {
-  //   $.ajax({
-  //     url: `${BASE_URL}/bookmarks/${id}`,
-  //     method: 'DELETE',
-	// 		success: callback
-	// 	});
-
-	// 	const deleteItem = function(id, callback) {
-	// 		$.ajax({
-	// 			url: BASE_URL + '/bookmarks/' + id,
-	// 			method: 'DELETE',
-	// 			success: callback
-	// 		});
-  // };
-
+  const deleteItems = function (id,  callback) {
+    $.ajax({
+      url: `${BASE_URL}/bookmarks/${id.id}`,
+      method: 'DELETE',
+      success: callback
+    });
+  };
   return {
     getItems,
     createItems,
     updateItems,
-    //deleteItem
+    deleteItems
   };
 }) ();
 
