@@ -1,9 +1,13 @@
 /* global $ */
 'use strict';
-const store = (function() {
+const store = (function () {
+  //not finished
+  const bookmarks = {
+    items: [],
 
-  bookmarks: [],
-  addFormVisible: false,
+    addFormVisible: false,
+    error: ""
+  }
 
   const toggleFormVisible = function () {
     this.addFormVisible = !this.addFormVisible;
@@ -19,33 +23,14 @@ const store = (function() {
 
   const filterByRatings = function (rating) {
     this.bookmarks = this.bookmarks.filter(item => item.rating !== rating);
-	};
+  };
 
-	return {
-		bookmarks: [],
-		addFormVisible: false,
-		toggleFormVisible,
-		addBookmark,
-		deleteBookmark,
-		filterByRatings
-	};
+  return {
+    bookmarks: [],
+    addFormVisible: false,
+    toggleFormVisible,
+    addBookmark,
+    deleteBookmark,
+    filterByRatings
+  };
 }());
-
-
-
-
-// return {
-//   bookmark: [],
-// };
-
-// { id,
-//   title,
-//   url,
-//   desc,
-//   rating: num,
-//   adding: false,
-//   delete: false,
-//   detail: false,
-// },
-
-

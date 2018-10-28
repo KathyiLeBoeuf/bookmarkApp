@@ -1,7 +1,12 @@
 /* global $  */
 'use strict';
 
+$(function () {
+  //bind event listeners here
 
+
+
+})
 
 
 
