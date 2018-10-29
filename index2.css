@@ -61,93 +61,12 @@ body {
 		line-height: 1.7;
 }
 
-
+section {
+	margin-top: 2rem;
+}
 /*------------------------------------------------------------------------------------------------------
 COLUMN SETUP
 ------------------------------------------------------------------------------------------------------*/
-
-.col {
-	display: block;
-	float:left;
-	margin: 1% 0 1% 1.5%;
-}
-.col:first-child { margin-left: 0; }
-
-/*  GROUPING  */
-.group:before,
-.group:after { content:""; display:table; }
-.group:after { clear:both;}
-.group { zoom:1; /* For IE 6/7 */ }
-
-/*  GRID OF FOUR  */
-.span_4_of_4 {
-	width: 99%;
-}
-.span_3_of_4 {
-	width: 73.6%;
-}
-.span_2_of_4 {
-	width: 48.2%;
-}
-.span_1_of_4 {
-	width: 22.8%;
-}
-/*  GO FULL WIDTH AT 780 PIXELS */
-@media only screen and (max-width: 780px) {
-	.col {  margin: 1% 1% 1% 1%; }
-	.span_1_of_4, .span_2_of_4, .span_3_of_4, .span_4_of_4 { width: 48%; }
-}
-
-/*  GO FULL WIDTH BELOW 480 PIXELS */
-@media only screen and (max-width: 480px) {
-	.col {  margin: 1% 0 1% 0%; }
-	.span_1_of_4, .span_2_of_4, .span_3_of_4, .span_4_of_4 { width: 100%; }
-}
-
-/*  GRID OF EIGHT  */
-.span_8_of_8 {
-	width: 99%;
-}
-
-.span_7_of_8 {
-  	width: 86.32%;
-}
-
-.span_6_of_8 {
-  	width: 73.65%;
-}
-
-.span_5_of_8 {
-  	width: 60.97%;
-}
-
-.span_4_of_8 {
-  	width: 48.3%;
-}
-
-.span_3_of_8 {
-  	width: 35.62%;
-}
-
-.span_2_of_8 {
-  	width: 22.95%;
-}
-
-.span_1_of_8 {
-  	width: 10.27%;
-}
-
-/*  GO FULL WIDTH AT 780 PIXELS */
-@media only screen and (max-width: 780px) {
-	.col {  margin: 1% 0% 1% 1%; }
-	.span_1_of_8, .span_2_of_8, .span_3_of_8, .span_4_of_8, .span_5_of_8, .span_6_of_8, .span_7_of_8, .span_8_of_8 { width: 48%; }
-}
-/*  GO FULL WIDTH BELOW 480 PIXELS */
-@media only screen and (max-width: 480px) {
-	.col {  margin: 1% 0% 1% 1%; }
-	.span_1_of_8, .span_2_of_8, .span_3_of_8, .span_4_of_8, .span_5_of_8, .span_6_of_8, .span_7_of_8, .span_8_of_8 { width: 100%; }
-}
-
 
 /*------------------------------------------------------------------------------------------------------*/
 /*  REUSABLE COMPONENTS */
@@ -180,13 +99,13 @@ h1 {
 /*  HEADER */
 /*------------------------------------------------------------------------------------------------------*/
 .header {
-	/*border: .5rem purple solid; */
 	background-color: #fff;
 }
 footer {
 	border-top: .5rem #aaa solid;
 	text-align: center;
 	padding-top: 2rem;
+	margin-top: 2rem;
 }
 /*----------  MAIN NAV  ---------- */
 .nav {
@@ -251,7 +170,13 @@ footer {
 /*------------------------------------------------------------------------------------------------------*/
 /*  SECTION 1 */
 /*------------------------------------------------------------------------------------------------------*/
-
+.main {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding-bottom: 2rem;
+}
 /*------------------------------------------------------------------------------------------------------*/
 /*  default bookmark */
 /*------------------------------------------------------------------------------------------------------*/
@@ -259,6 +184,8 @@ footer {
 	border: 1px #aaa solid;
 	background-color: aliceblue;
 	border-radius: 1rem;
+	min-width: 40rem;
+	max-width: 60rem;
 }
 
 /*------------------------------------------------------------------------------------------------------*/
@@ -268,6 +195,10 @@ footer {
 	border: 1px #aaa solid;
 	background-color:#eee;
 	border-radius: 1rem;
+	min-width: 40rem;
+	max-width: 60rem;
+	padding-bottom: 4rem;
+
 }
 .title {
 	font-size: 2rem;
@@ -315,11 +246,14 @@ margin-left: 1rem;
 	border: 1px #aaa solid;
 	background-color: #eee;
 	border-radius: 1rem;
+	min-width: 40rem;
+	max-width: 60rem;
 }
 .form1 {
 	position: relative;
 	margin: 1rem 0 1rem 1rem;
 	border-radius: 1rem;
+	padding-bottom: 4rem;
 }
 .label1, .input1, .textarea1, .select1, .button1 {
 	width: 90%;
