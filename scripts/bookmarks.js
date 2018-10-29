@@ -58,6 +58,20 @@ const bookmarks = (function () {
       </ul>
     </div>`;
   }
+  const generateError = function (error) {
+    let message = '';
+    if (err.responseJSON && err.responseJSON.message) {
+      message = err.responseJSON.message;
+    } else {
+      message = `${err.code} Server Error`;
+    }
+    return `
+      <section class="error-content">
+        <button id="cancel-error">X</button>
+        <p>${message}</p>
+      </section>`;
+  }
+
   //++++++++++++++++++++++++++++++
 
   const render = function () {
@@ -67,6 +81,12 @@ const bookmarks = (function () {
     }
     else {
       $('#bookmarkList').html(generateAllBookmarks());
+    }
+    if (store.error) {
+      const mistake = generateError(store.error);
+      $('.error-container').html(mistake);
+    } else {
+      $('.error-container').empty();
     }
   }
   //++++++++++++++++++++++++++++++

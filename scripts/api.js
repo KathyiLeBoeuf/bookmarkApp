@@ -10,9 +10,9 @@ const api = (function () {
   };
 
   const createItems = function (item, success, error) {
-    // console.log(item);
+    console.log(item);
     const newItems = JSON.stringify(item);
-    // console.log(newItems);
+    console.log(newItems);
     $.ajax({
       url: `${BASE_URL}`,
       method: 'POST',
