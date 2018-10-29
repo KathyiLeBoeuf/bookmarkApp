@@ -1,27 +1,15 @@
 /* global $  */
 'use strict';
 
-$(function () {
-  //bind event listeners here
+$(document).ready(function () {
+  bookmarks.bindEventListeners();
 
-
-
-})
-
-
-
-
-
-
-//   return {
-
-//   };
-// })();
-
-
-
-
-// $();
+  //gets bookmarks info from the server,
+  api.getItems((bookmarks) => {
+    bookmarks.forEach((bookmark) => store.addBookmark(bookmark));
+    // bookmarks.render();
+  });
+});
 
 /* works!! */
 /*
