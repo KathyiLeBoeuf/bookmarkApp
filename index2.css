@@ -62,7 +62,7 @@ body {
 }
 
 section {
-	margin-top: 5rem;
+	margin-top: 2rem;
 }
 /*------------------------------------------------------------------------------------------------------
 COLUMN SETUP
@@ -184,8 +184,8 @@ footer {
 	border: 1px #aaa solid;
 	background-color: aliceblue;
 	border-radius: 1rem;
-min-width: 40rem;
-max-width: 60rem;
+	min-width: 40rem;
+	max-width: 60rem;
 }
 
 /*------------------------------------------------------------------------------------------------------*/
