@@ -1,41 +1,36 @@
 /* global $ */
-'use strict';  // (function(){     })();
-const store =  {
+'use strict';
+const store = (function () {
+  //not finished
+  const bookmarks = {
+    items: [],
 
-  bookmarks:  [],
-  addFormVisible: false,
+    addFormVisible: false,
+    error: ""
+  }
 
-  toggleFormVisible:  function() {
+  const toggleFormVisible = function () {
     this.addFormVisible = !this.addFormVisible;
-  },
-  const addBookmark = function(bookmark) {
-		Object.assign(bookmark, {expanded: false});
-		this.bookmarks.push(bookmark)
-	},
-	const deleteBookmark = function(id) {
-		this.bookmarks = this.bookmarks.filter(item => item.id !== id);
-		this.bookmarks.slice([id], 1);
-	},
-const filterRatings = function(rating) {
+  };
+  const addBookmark = function (bookmark) {
+    Object.assign(bookmark, { expanded: false });
+    this.bookmarks.push(bookmark);
+  };
+  const deleteBookmark = function (id) {
+    this.bookmarks = this.bookmarks.filter(item => item.id !== id);
+    this.bookmarks.slice([id], 1);
+  };
 
-}
-	}
+  const filterByRatings = function (rating) {
+    this.bookmarks = this.bookmarks.filter(item => item.rating !== rating);
+  };
 
-
-
-
-// return {
-//   bookmark: [],
-// };
-
-// { id,
-//   title,
-//   url,
-//   desc,
-//   rating: num,
-//   adding: false,
-//   delete: false,
-//   detail: false,
-// },
-
-
+  return {
+    bookmarks: [],
+    addFormVisible: false,
+    toggleFormVisible,
+    addBookmark,
+    deleteBookmark,
+    filterByRatings
+  };
+}());

@@ -52,232 +52,310 @@ html {
 }
 
 body {
-
 		padding: 3rem;   /* gives a white border around the entire page */
-		color: #fff;
+		background-color: white;
+		color: #111;
 		font-family: 'Open Sans', sans-serif;
+		font-size: 1.5rem;
 		font-weight: 400;
 		line-height: 1.7;
 }
-.template {
-	height: 40rem;
-}
-h2 {
-	color: black;
-	background-color: lavender;
-	font-size: 1rem;
-}
+
+
 /*------------------------------------------------------------------------------------------------------
-COLUMN SET up
+COLUMN SETUP
 ------------------------------------------------------------------------------------------------------*/
-/*
-.row {
-  max-width: 1000px;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin: 0 auto;
+
+.col {
+	display: block;
+	float:left;
+	margin: 1% 0 1% 1.5%;
+}
+.col:first-child { margin-left: 0; }
+
+/*  GROUPING  */
+.group:before,
+.group:after { content:""; display:table; }
+.group:after { clear:both;}
+.group { zoom:1; /* For IE 6/7 */ }
+
+/*  GRID OF FOUR  */
+.span_4_of_4 {
+	width: 99%;
+}
+.span_3_of_4 {
+	width: 73.6%;
+}
+.span_2_of_4 {
+	width: 48.2%;
+}
+.span_1_of_4 {
+	width: 22.8%;
+}
+/*  GO FULL WIDTH AT 780 PIXELS */
+@media only screen and (max-width: 780px) {
+	.col {  margin: 1% 1% 1% 1%; }
+	.span_1_of_4, .span_2_of_4, .span_3_of_4, .span_4_of_4 { width: 48%; }
 }
 
-/* Clearfix */
-/*
-.row::before,
-.row::after {
-  display: table;
-  content: '';
+/*  GO FULL WIDTH BELOW 480 PIXELS */
+@media only screen and (max-width: 480px) {
+	.col {  margin: 1% 0 1% 0%; }
+	.span_1_of_4, .span_2_of_4, .span_3_of_4, .span_4_of_4 { width: 100%; }
 }
 
-.row::after {
-  clear: both;
+/*  GRID OF EIGHT  */
+.span_8_of_8 {
+	width: 99%;
 }
 
-.col-1, .col-2, .col-3, .col-4, .col-6, .col-12 {
-  float: left;
-  /* Gutters:
-   * Each column is padded by half-a-gutter on each side,
-   * Half a gutter is 10px, 10/960 (context) = 1.041666%
-	 */
-	 /*
-  padding-left: 1.04166666%;
-  padding-right: 1.04166666%;
+.span_7_of_8 {
+  	width: 86.32%;
 }
-*/
+
+.span_6_of_8 {
+  	width: 73.65%;
+}
+
+.span_5_of_8 {
+  	width: 60.97%;
+}
+
+.span_4_of_8 {
+  	width: 48.3%;
+}
+
+.span_3_of_8 {
+  	width: 35.62%;
+}
+
+.span_2_of_8 {
+  	width: 22.95%;
+}
+
+.span_1_of_8 {
+  	width: 10.27%;
+}
+
+/*  GO FULL WIDTH AT 780 PIXELS */
+@media only screen and (max-width: 780px) {
+	.col {  margin: 1% 0% 1% 1%; }
+	.span_1_of_8, .span_2_of_8, .span_3_of_8, .span_4_of_8, .span_5_of_8, .span_6_of_8, .span_7_of_8, .span_8_of_8 { width: 48%; }
+}
+/*  GO FULL WIDTH BELOW 480 PIXELS */
+@media only screen and (max-width: 480px) {
+	.col {  margin: 1% 0% 1% 1%; }
+	.span_1_of_8, .span_2_of_8, .span_3_of_8, .span_4_of_8, .span_5_of_8, .span_6_of_8, .span_7_of_8, .span_8_of_8 { width: 100%; }
+}
 
 
 /*------------------------------------------------------------------------------------------------------*/
 /*  REUSABLE COMPONENTS */
 /*------------------------------------------------------------------------------------------------------*/
 
-
-
+ul {
+	padding-left: 0;
+}
+li {
+	padding: 1rem;
+	list-style-type: none;
+	text-align: center;
+}
+button, input[type="text"] {
+  padding: .5rem;
+}
+button:hover {
+  cursor: pointer;
+}
 
 /*----------  HEADINGS  ---------- */
 h1 {
 	text-align: center;
 	background-color: #fff;
-	color: blue;
+	color: #004480;
 	font-size: 4rem;
-	/* positioning */
-	/* display + box model */
-	/* color */
-	/* text */
-	/* other */
 }
 
-
-/*----------  PARAGRAPHS  ---------- */
-
-
-/*----------  ICONS  ---------- */
-
-
-
-/*----------  LINKS  ---------- */
-
-
-
-
-/*----------  BUTTONS  ---------- */
-button, input[type="text"] {
-  padding: 5px;
-}
-
-button:hover {
-  cursor: pointer;
-}
-.nav__btn {
-/* positioning */
-padding: .5rem;
-/* display + box model */
-border-radius: 1rem;
-/* color */
-background-color: #fff;
-/* text */
-color: blue;
-font-size: 2rem;
-/* other */
-}
-/* .wrapper {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
-	grid-auto-rows: minmax(100px, auto);
-	border: .5rem lightcoral dashed;
-} */
 /*------------------------------------------------------------------------------------------------------*/
 /*  HEADER */
 /*------------------------------------------------------------------------------------------------------*/
-
 .header {
 	/*border: .5rem purple solid; */
 	background-color: #fff;
 }
-
-
-
-
+footer {
+	border-top: .5rem #aaa solid;
+	text-align: center;
+	padding-top: 2rem;
+}
 /*----------  MAIN NAV  ---------- */
-
 .nav {
+	margin: 1rem;
+	position: relative;
 	padding: 2rem;
 	background-color: #fff;
-	border-bottom: .5rem #555 solid;
+	border-bottom: .5rem #aaa solid;
+
+}
+.nav__btn,
+.nav__select {
+	margin: 1rem;
+	border-radius: 1rem;
+	background-color: #fff;
+	border: 1px #aaa solid;
+	color: #004480;
+	font-size: 2rem;
+}
+.nav__btn {
+	padding: .3rem 1rem;
+	float: none;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-120%, -50%);
 }
 .nav__select {
-/* positioning */
-/* display + box model */
-margin-left: 1rem;
-/* color */
-background-color: #fff;
-color: black;
-/* text */
-font-size: 2rem;
-/* other */
+	float: none;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-10%, -50%);
+}
+/* Responsive navigation menu (for mobile devices) */
+@media screen and (max-width: 480px) {
+	.nav  {
+    float: none;
+		display: block;
+		height: 8rem;
+	}
+	.nav__btn {
+		position: absolute;
+    top: -40%;
+    left: 0%;
+	 transform: none;
+	 width: 85vw;
+	}
+	.nav__select {
+		position: absolute;
+    top: 40%;
+    left: 0%;
+	 transform: none;
+	 width: 85vw;
+	 text-align-last:center;
+	}
 }
 
 /*----------  MOBILE NAV  ---------- */
-
-
 /*----------  STICKY NAV  ---------- */
-
-
-
 
 /*------------------------------------------------------------------------------------------------------*/
 /*  SECTION 1 */
 /*------------------------------------------------------------------------------------------------------*/
-.form__add,
-.form__edit  {
-	/*width: 50%; */
-	border: 1px #eee solid;
 
-}
-label {
-	font-size: 1rem;
-	color: blue;
-	/*justify-self: left; */
-}
-input {
-	font-size: 2rem;
-	color: orange;
-}
-textarea {
-	color: pink;
-}
-.form__stars {
-	background-color: yellow;
-	color:black;
-}
-.star__label {
-	color: blueviolet;
-	/*margin-top: 2rem;*/
-}
-.form__submit {
-	padding: .5rem;
-	font-size: 1rem;
-	background-color: #aaa;
-	color: blue;
-  /*float: right; */
+/*------------------------------------------------------------------------------------------------------*/
+/*  default bookmark */
+/*------------------------------------------------------------------------------------------------------*/
+.row0 { /* default bookmark */
+	border: 1px #aaa solid;
+	background-color: aliceblue;
 	border-radius: 1rem;
 }
-/*
-.row__form--bottom {
-	align-items: center;
-}
-*/
-/*------------------------------------------------------------------------------------------------------*/
-/*  reg bookmark */
-/*------------------------------------------------------------------------------------------------------*/
-.js-book--empty {
-	width: 23.8%;
-	margin: 2rem;
-	border: 1rem orange dotted;
-	background-color: #aaa;
-	color: blue;
-	font-size: 4rem;
-}
-.js-book--li,
-.js-book__details--li {
-	padding: 1rem;
-	list-style-type: none;
-	font-size: 2rem;
-	color: black;
-	background-color: tan;
-	width: 12rem;
-	height: 8rem;
-	border-radius: .2rem;
-	text-align: center;
-}
 
 /*------------------------------------------------------------------------------------------------------*/
-/*  details
+/*  expanded bookmark
 /*------------------------------------------------------------------------------------------------------*/
-.js-book__details--li {
-
+.row2 { /* expanded bookmark */
+	border: 1px #aaa solid;
+	background-color:#eee;
+	border-radius: 1rem;
+}
+.title {
 	font-size: 2rem;
-	color: black;
-	background-color: tan;
-	width: 24rem;
-	height: 8rem;
-	border-radius: .2rem;
+	font-weight: bold;
+}
+.details__rating{
+	padding: 0;
+}
+.desc {
 	text-align: left;
+	background-color: #fff;
+	margin: 2px;
+}
+.btn {
+	border-radius: 1rem;
+}
+.btn__link {
+	float: right;
+	margin: 0 1rem 1rem 0;
+}
+ a:link,
+ a:visited,
+ a:hover,
+ a:active {
+text-decoration: none;
+}
+
+.btn a:hover,
+.btn a:active {
+	background-color: #004480;
+	color: #fff;
+}
+.btn__del {
+float: left;
+margin-left: 1rem;
+}
+.btn__expand {
+	padding: .4rem;
+	margin: 1rem 0 0 1rem;
+}
+/*------------------------------------------------------------------------------------------------------*/
+/*  ADD FORM
+/*------------------------------------------------------------------------------------------------------*/
+.row3 {
+	border: 1px #aaa solid;
+	background-color: #eee;
+	border-radius: 1rem;
+}
+.form1 {
+	position: relative;
+	margin: 1rem 0 1rem 1rem;
+	border-radius: 1rem;
+}
+.label1, .input1, .textarea1, .select1, .button1 {
+	width: 90%;
+	display: block;
+}
+.input1,
+.textarea1 {
+	background-color:white;
+	border: .1rem #aaa solid;
+	height: 2rem;
+}
+.input1,
+ {
+	height: 2rem;
+}
+.label1__rating,
+.select1__rating,
+.button1__select {
+margin-bottom: 1rem;
+}
+.label1__rating {
+	margin: 1.5rem 0 0 1rem;;
+	float: left;
+	width: 32%
+}
+.select1__rating {
+	float: left;
+	margin-top: 1.9rem;
+	margin-left: .6rem;
+	width: 25%;
+
+}
+.button1__select {
+	float: right;
+	margin-top: 1.5rem ;
+	margin-right: 2.2rem;
+	width: 25%;
+	border-radius: 1rem;
 }
