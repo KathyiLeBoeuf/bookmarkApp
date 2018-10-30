@@ -6,7 +6,7 @@ const api = (function () {
 
   const getItems = function (callback) {
     $.getJSON(`${BASE_URL}`, callback);
-    // console.log(`I'm the GET request ${callback}`);
+    console.log(`I'm the GET request ${callback}`);
   };
 
   const createItems = function (item, success, error) {

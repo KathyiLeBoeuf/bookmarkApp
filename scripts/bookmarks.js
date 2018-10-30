@@ -2,7 +2,6 @@
 'use strict';
 const bookmarks = (function () {
 
-
   const generateAddBookmarkForm = function () {
 
     return `
@@ -58,6 +57,10 @@ const bookmarks = (function () {
       </ul>
     </div>`;
   }
+  const generateAllBookmarks = function (bookmarks) {
+    const bookmarks = bookmarks.map((bookmark) => generateBookmark(bookmark));
+    return bookmarks.join('');
+  }
   const generateError = function (error) {
     let message = '';
     if (err.responseJSON && err.responseJSON.message) {
@@ -70,13 +73,12 @@ const bookmarks = (function () {
         <button id="cancel-error">X</button>
         <p>${message}</p>
       </section>`;
+    // return 'html message code';
   }
-
   //++++++++++++++++++++++++++++++
-
   const render = function () {
     if (store.addFormVisible === true) {
-      console.log('this is inside render');
+      console.log('this is inside render in bookmarks.js');
       $('#addForm').html(generateAddBookmarkForm());
     }
     else {
@@ -90,11 +92,9 @@ const bookmarks = (function () {
     }
   }
   //++++++++++++++++++++++++++++++
-  const generateAllBookmarks = function (bookmarks) {
-    const bookmarks = bookmarks.map((bookmark) => generateBookmark(bookmark));
-    return bookmarks.join('');
-  }
+
   const handleCreateAddBookmark = function () {
+    console.log("I'm in bookmarks.js handleCreateAddBookmark")
     $('.js-nav__btn').on('click', '#addForm', (e) => {
       if (store.bookmarks.addFormVisible === false) {
         store.bookmarks.addFormVisible = true;
@@ -171,27 +171,9 @@ const bookmarks = (function () {
 //++++++++++++++++++++++++++++++
 
 
-
-
-
-
-
 //})();
 
-
-
 /*
-// if the server is down, send the error message from the server, else send one from UI
-  function generateError(err) {
-    let message = '';
-    if(err.responseJSON && err.responseJSON.message) {
-      message = err.responseJSON.message;
-    } else {
-      message = `${err.code} Server Error`;
-    }
-    return 'html message code';
-	}
-
 	render drawing the page brand new
 
 (store = addForm toggle)
@@ -219,52 +201,4 @@ render the bookmark on the DOM
 listen for delete
 DELETE request
 
-*/
-
-
-
-
-
-
-
-
-/*
-
-  const validateTitle = function(title) {
-    if (!title) throw new TypeError('Please type in a title');
-  };
-  const validateUrl = function(url) {
-    if (!url) throw new TypeError('Insert url address here');
-  };
-  const validateDesc = function(desc) {
-    if (!desc) throw new TypeError('Add a description here');
-  };
-  const validateRating = function(rating) {
-    if (!rating) throw new TypeError('Give your bookmark a rating');
-  };
-
-  const createList = function(title, url, desc, rating) {
-    return {
-      id,
-      title,
-      url,
-      desc,
-      rating,
-      adding: false,
-      delete: false,
-      detail: false,
-      edit: false,
-    };
-  };
-
-
-  return {
-    validateTitle,
-    validateUrl,
-    validateDesc,
-    validateRating,
-    createList,
-  };
-
-}());
 */

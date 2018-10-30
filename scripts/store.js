@@ -2,33 +2,30 @@
 'use strict';
 const store = (function () {
 
-  const bookmarks = {
-    bookmark: [],
-    addFormVisible: false,
-    expandForm: false,
-    error: ""
-  }
-  const setError = function (error) {
-    this.error = error;
-  }
-  const toggleFormVisible = function () {
-    this.addFormVisible = !this.addFormVisible;
-  };
   const addBookmark = function (bookmark) {
     console.log("I'm in the store - addBookmark")
-    Object.assign(bookmark, { expanded: false });
+    // Object.assign(bookmark, { expanded: false });
     this.bookmarks.push(bookmark);
+  };
+  const setError = function (error) {
+    this.error = error;
+  };
+  const toggleFormVisible = function () {
+    this.addFormVisible = !this.addFormVisible;
+    if (this.addFormVisible === true) {
+      this.addFormVisible = false;
+    }
   };
   const findById = function (id) {
     return this.bookmarks.find(bookmark => bookmark.id === id);
-  }
+  };
   const update = function (id, newData) {
-    const bookmark = this.findById(id);
-    Object.assign(bookmark, newData);
-  }
+    const bookmarkIndex = this.bookmark.findById(bookmark => bookmark.id === id);
+    Object.assign(this.bookmark[bookmarkIndex], newData);
+  };
   const expandBookmark = function () {
     this.expandForm = !this.expandForm;
-  }
+  };
   const deleteBookmark = function (id) {
     this.bookmarks = this.bookmarks.filter(bookmark => bookmark.id !== id);
     this.bookmarks.slice([id], 1);

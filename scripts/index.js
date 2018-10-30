@@ -3,13 +3,19 @@
 
 $(document).ready(function () {
   bookmarks.bindEventListeners();
-
-  //gets bookmarks info from the server,
+  //gets bookmarks info from the server
   api.getItems((bookmarks) => {
-    bookmarks.forEach((bookmark) => store.addBookmark(bookmark));
-    // bookmarks.render();
+    bookmarks.forEach((bookmark) => {
+      store.addBookmark(bookmark);
+    });
+    console.log("I'm here in index.js")
+    bookmarks.render();
   });
+  console.log("I'm below render in index.js")
+
 });
+
+
 
 /* works!! */
 /*
